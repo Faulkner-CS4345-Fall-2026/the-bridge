@@ -12,12 +12,12 @@ Pages and Features:
 - Apply / My Applications: A form for a student to apply to a specific opportunity, plus a simple view of what they have already submitted. 
 
 Team Members:
-- Adetutu Adegoroye (Tutu) 
+- Adetutu Adegoroye (Tutu) (Repository Admin)
     * GitHub Username = adetutu-adegoroye
-    * Next Task = Build the Post an Opportunity Form
+    * Next Task = Build the Post an Opportunity Form and review others' code
 - Kalyb Kirby 
     * GitHub Username = Kalyb-Kirby
-    * Next Task = Build the Apply/My Application page
+    * Next Task = Build the Apply/My Application page and review others' code
 - Andrew Grete
     * GitHub Username = Shiro-roda
-    * Next Task = Build the Home and Browse Opportunities Pages
+    * Next Task = Build the Home and Browse Opportunities Pages and review others' code
