@@ -19,5 +19,12 @@ Team Members:
     * GitHub Username = Kalyb-Kirby
     * Next Task = Build the Apply/My Application page and review others' code
 - Andrew Grete
-    * GitHub Username = Shiro-roda
+    * GitHub Username = Shiro-roda 
     * Next Task = Build the Home and Browse Opportunities Pages and review others' code
+
+## Future Features 
+These are not part of the current planned pages, but may be added in a later milestone: 
+- About / How It Works page 
+- Confirmation page shown after applying to or posting an opportunity
+- Organization partner dashboard so churches can manage their own listings directly 
+- Admin approval step before a new listing goes live 
