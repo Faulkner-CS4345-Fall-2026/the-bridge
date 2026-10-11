@@ -27,4 +27,6 @@ These are not part of the current planned pages, but may be added in a later mil
 - About / How It Works page 
 - Confirmation page shown after applying to or posting an opportunity
 - Organization partner dashboard so churches can manage their own listings directly 
-- Admin approval step before a new listing goes live 
+- Admin approval step before a new listing goes live'
+
+- gmb - can I edit without creating a PR?
