@@ -1,0 +1,33 @@
+header{
+    background-color: #005daa;
+    color: #F7F9FB;
+    a {
+        color: #F7F9FB;
+    }
+}
+
+a {
+    color: #4E8888;
+}
+
+button {
+    background-color: #E0A526;
+    color: #1F2937;
+    border: none;
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+}
+
+p {
+    font-family: 'Lora', serif;
+}
+
+body {
+    background-color: #F7F9FB;
+    color: #1F2937;
+}
