@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Bridge | About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- BEGIN SHARED HEADER (keep identical on every page) -->
+    <header class="site-header">
+      <a class="site-title" href="index.html">The Bridge</a>
+
+      <!-- BEGIN SHARED NAV (nested inside the header) -->
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <!-- Add Browse Opportunities and Post an Opportunity here, in the same order on every page, once those pages are merged. -->
+        </ul>
+      </nav>
+      <!-- END SHARED NAV -->
+    </header>
+    <!-- END SHARED HEADER -->
+
+    <!-- BEGIN PAGE CONTENT (About page only) -->
+    <main class="about-page">
+      <h1>About The Bridge</h1>
+      <p class="about-intro">
+        The Bridge is a website concept that connects organizations that have
+        openings with people looking for opportunities to fill them. It is a
+        semester project for CS 4345 at Faulkner University. It is a classroom
+        concept, not an official Faulkner University service, and any
+        organizations or listings you see while we build it are examples, not
+        real partners.
+      </p>
+
+      <section aria-labelledby="purpose">
+        <h2 id="purpose">Why The Bridge exists</h2>
+        <p>
+          Local churches regularly need help, from staffing children's ministry
+          and organizing outreach events to filling part-time roles or offering
+          internship-style experience in ministry, communications, and
+          administration. Today those needs are scattered across bulletin
+          announcements, personal connections, and word of mouth, which makes
+          them hard for students to discover and hard for churches to share with
+          a wide, willing audience.
+        </p>
+        <p>
+          At the same time, students often need service hours, internship
+          placements, or hands-on course experience, but there is no single
+          place that connects them to nearby churches that could offer it. The
+          Bridge is our attempt to be that place.
+        </p>
+      </section>
+
+      <section aria-labelledby="audience">
+        <h2 id="audience">Who it serves</h2>
+        <p>
+          The Bridge is designed first for churches near Faulkner University and
+          for the Faulkner students, faculty, and departments who are looking
+          for volunteer, internship, or paid opportunities with them. Students
+          may apply on their own, to meet a course requirement, or for a formal
+          internship.
+        </p>
+        <p>As we build the site, visitors will be able to:</p>
+        <ul>
+          <li>
+            Post an opportunity, with its type, time commitment, location, and
+            description (organizations).
+          </li>
+          <li>
+            Browse and filter open opportunities and apply to the ones that fit
+            (students).
+          </li>
+          <li>
+            Find which opportunities count toward a course requirement (faculty
+            and departments).
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach">
+        <h2 id="approach">How we are building it</h2>
+        <p>
+          We are a small team of students building The Bridge in stages: pages
+          first, then forms, then a server and database. A few commitments guide
+          our choices.
+        </p>
+        <ul>
+          <li>
+            <strong>Honest communication.</strong> This page says what is real
+            and what is still planned.
+          </li>
+          <li>
+            <strong>Collect only what we need.</strong> Our forms will not ask
+            for government ID numbers, payment details, or home addresses.
+          </li>
+          <li>
+            <strong>Accessible by default.</strong> We are using labeled form
+            fields, keyboard-friendly navigation, and readable color contrast.
+          </li>
+          <li>
+            <strong>Room to grow.</strong> We write the site generally enough
+            that it could someday serve other schools and organizations.
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="next-step">
+        <h2 id="next-step">Take the next step</h2>
+        <p>
+          Head back to the Home page to see where visitors will browse and post
+          opportunities.
+        </p>
+        <p>
+          <a class="cta-link" href="index.html#opportunity-actions"
+            >Go to the Home page and get started</a
+          >
+        </p>
+      </section>
+    </main>
+    <!-- END PAGE CONTENT -->
+
+    <!-- BEGIN SHARED FOOTER (keep identical on every page) -->
+    <footer class="site-footer">
+      <p>
+        The Bridge is a student semester project for CS 4345 at Faulkner
+        University. It is a classroom concept and not an official university
+        service.
+      </p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </footer>
+    <!-- END SHARED FOOTER -->
+  </body>
+</html>
