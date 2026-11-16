@@ -1,0 +1,78 @@
+name: Deploy project to alwaysdata
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: alwaysdata-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+      DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Install deployment tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y php-cli rsync openssh-client
+
+      - name: Check the public folder and PHP syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f public/index.html
+          test -f public/deployment-check.php
+          if find public -type l -print -quit | grep -q .; then
+            echo "Remove symbolic links from public/ before deploying."
+            exit 1
+          fi
+          while IFS= read -r -d '' file; do
+            php -l "$file"
+          done < <(find public -type f -iname '*.php' -print0)
+
+      - name: Prepare SSH
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$DEPLOY_HOST"
+          test -n "$DEPLOY_USER"
+          test -n "$DEPLOY_SSH_KEY"
+          test -n "$DEPLOY_KNOWN_HOSTS"
+          [[ "$DEPLOY_USER" =~ ^[a-zA-Z0-9_-]+$ ]]
+          [[ "$DEPLOY_HOST" =~ ^ssh-[a-zA-Z0-9_-]+\.alwaysdata\.net$ ]]
+          install -m 700 -d "$HOME/.ssh"
+          printf '%s\n' "$DEPLOY_SSH_KEY" > "$HOME/.ssh/deploy_key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/deploy_key" "$HOME/.ssh/known_hosts"
+          ssh-keygen -y -P "" -f "$HOME/.ssh/deploy_key" > /dev/null
+
+      - name: Upload the website
+        shell: bash
+        run: |
+          set -euo pipefail
+          ssh -i "$HOME/.ssh/deploy_key" -o IdentitiesOnly=yes \
+            -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            "$DEPLOY_USER@$DEPLOY_HOST" 'mkdir -p "$HOME/www/week12-project"'
+          rsync -rtz --chmod=D755,F644 \
+            --exclude='.git/' --exclude='.github/' --exclude='.env*' \
+            --exclude='*.sql' --exclude='*.pem' --exclude='*.key' \
+            --exclude='node_modules/' \
+            -e "ssh -i $HOME/.ssh/deploy_key -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes" \
+            public/ "$DEPLOY_USER@$DEPLOY_HOST:www/week12-project/"
