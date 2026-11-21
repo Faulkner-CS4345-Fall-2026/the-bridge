@@ -1,9 +1,41 @@
 header{
     background-color: #005daa;
     color: #F7F9FB;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
     a {
         color: #F7F9FB;
+        text-decoration: none;
     }
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+}
+
+nav ul{
+        text-align: right;
+        display: flex;
+        list-style-type: none;
+        gap: 1rem;
+        font-size: 1.25rem;
+        margin: .25rem 0 0 0;
+        text-decoration: none;
+    }
+
+footer {
+    nav {
+        ul{
+            justify-content: center;
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+}
+body {
+    margin: 0;
+    padding: 0;
 }
 
 a {
