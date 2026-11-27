@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php
-    $pageTitle = "Test";
+    $pageTitle = "Template";
     require __DIR__ . "/includes/head.php";
   ?>
   <body>
