@@ -24,6 +24,8 @@ nav ul{
     }
 
 footer {
+    justify-content: center;
+    text-align: center;
     nav {
         ul{
             justify-content: center;
@@ -33,9 +35,14 @@ footer {
         }
     }
 }
+
 body {
     margin: 0;
     padding: 0;
+}
+
+main{
+    margin: 2rem;
 }
 
 a {
