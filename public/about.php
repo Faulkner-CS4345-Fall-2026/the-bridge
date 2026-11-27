@@ -1,31 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Bridge | About</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/styles.css" />
-  </head>
+  <?php
+    $pageTitle = "About";
+    require __DIR__ . "/includes/head.php";
+  ?>
   <body>
-    <!-- BEGIN SHARED HEADER (keep identical on every page) -->
-    <header class="site-header">
-      <a class="site-title" href="index.html">The Bridge</a>
-
-      <!-- BEGIN SHARED NAV (nested inside the header) -->
-      <nav class="site-nav" aria-label="Primary">
-        <ul>
-          <li><a href="index.html">Home</a></li><li><a href="about.html" aria-current="page">About</a></li>
-          <!-- Add Browse Opportunities and Post an Opportunity here, in the same order on every page, once those pages are merged. -->
-        </ul>
-      </nav>
-      <!-- END SHARED NAV -->
-    </header>
+    <!-- SHARED HEADER (keep identical on every page) SHARED NAV is nested in header -->
+    <?php
+      require __DIR__ . "/includes/header.php";
+    ?>
     <!-- END SHARED HEADER -->
 
     <!-- BEGIN PAGE CONTENT (About page only) -->
@@ -127,18 +110,10 @@
     </main>
     <!-- END PAGE CONTENT -->
 
-    <!-- BEGIN SHARED FOOTER (keep identical on every page) -->
-    <footer class="site-footer">
-      <p>
-        The Bridge is a student semester project for CS 4345 at Faulkner
-        University. It is a classroom concept and not an official university
-        service.
-      </p>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </footer>
+    <!-- BEGIN SHARED FOOTER (keep identical on every page) ALSO CONTAINS NAV -->
+    <?php
+      require __DIR__ . "/includes/footer.php";
+    ?>
     <!-- END SHARED FOOTER -->
   </body>
 </html>

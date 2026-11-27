@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Bridge | Home</title>
-  </head>
+  <?php
+    $pageTitle = "Home";
+    require __DIR__ . "/includes/head.php";
+  ?>
   <body>
-    <header>
-      <h1>The Bridge</h1>
-    </header>
+    <?php
+      require __DIR__ . "/includes/header.php";
+    ?>
     <main>
       <p>
         The Bridge connects organizations that have openings with people looking
@@ -22,5 +21,8 @@
         </ul>
       </section>
     </main>
+    <?php
+      require __DIR__ . "/includes/footer.php";
+    ?>
   </body>
 </html>
